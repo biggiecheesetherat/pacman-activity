@@ -1197,11 +1197,13 @@ class GameCoordinator {
     this.mazeArray.forEach((row, rowIndex) => {
       this.mazeArray[rowIndex] = row[0].split('');
     });
-
+    const event = new Event("play");
+    
     this.gameStartButton.addEventListener(
-      'click',
+      'play',
       this.startButtonClick.bind(this),
     );
+    
     this.pauseButton.addEventListener('click', this.handlePauseKey.bind(this));
     this.soundButton.addEventListener(
       'click',
@@ -1216,6 +1218,7 @@ class GameCoordinator {
     link.onload = this.preloadAssets.bind(this);
 
     head.appendChild(link);
+    elem.dispatchEvent(event);
   }
 
   /**
