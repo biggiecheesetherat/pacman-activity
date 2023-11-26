@@ -112,10 +112,13 @@
       </div>
 
       <script>
+        function pacman(){
+          startGameplay(true);
+        }
         window.onload = () => {
           let gameCoordinator = new GameCoordinator();
+          setTimeout(pacman, 1500);
         }
-        startGameplay(true);
       </script>
     </div>
   </body>
